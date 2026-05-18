@@ -4,6 +4,7 @@ import config from "./config"
 import { pool } from "./db"
 import { userRoute } from "./modules/user/user.route"
 import { profileROute } from "./modules/profile/profile.route"
+import { authRouter } from "./modules/auth/auth.route"
 const app:Application = express()
 
 app.use(express.json())
@@ -22,4 +23,5 @@ res.status(200).json({
 app.use('/api/user',userRoute)
 
 app.use("/api/profile",profileROute)
+app.use("/api/auth",authRouter);
 export default app
