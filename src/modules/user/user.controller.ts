@@ -20,7 +20,7 @@ res.status(500).json({
 })
 }  
 }
-const getAllUser=async(REQ:Request,res:Response)=>{
+const getAllUser=async(req:Request,res:Response)=>{
 try{
 const result=await userService.getAllUsersFromDB()
     res.status(200).json({

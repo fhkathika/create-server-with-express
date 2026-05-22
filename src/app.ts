@@ -5,12 +5,13 @@ import { pool } from "./db"
 import { userRoute } from "./modules/user/user.route"
 import { profileROute } from "./modules/profile/profile.route"
 import { authRouter } from "./modules/auth/auth.route"
+import logger from "./middleware/logger"
 const app:Application = express()
 
 app.use(express.json())
 app.use(express.text())
 app.use(express.urlencoded({extended:true}))
-
+app.use(logger)
 
 app.get('/', (req:Request, res:Response) => {
 //   res.send('Hello World')
